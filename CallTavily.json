@@ -1,0 +1,41 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Tavily Web Search",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "Your Azure Function Url"
+    }
+  ],
+  "paths": {
+    "/TavilySearch": {
+      "post": {
+        "operationId": "webSearch",
+        "summary": "Search the web for real-time information about events, weather and market data",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "query": {
+                    "type": "string",
+                    "description": "The search query"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Search results"
+          }
+        }
+      }
+    }
+  }
+}
